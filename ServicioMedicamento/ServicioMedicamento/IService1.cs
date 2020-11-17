@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServicioMedicamento.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -12,36 +13,25 @@ namespace ServicioMedicamento
     [ServiceContract]
     public interface IService1
     {
-
+        //Listado de medicamentos
         [OperationContract]
-        string GetData(int value);
+        List<MedicamentoModel> listMedicamentos();
 
-        [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        //Lista forma farmaceutica
+        List<FormaFarmaceuticaModel> listFormaFarmaceutica();
+
+        //Recuperar medicamento
+        MedicamentoModel recuperarMedicamento(int idMedicamento);
+
+        //Agregar y editar medicamentto
+        int recuperarMedicamento(MedicamentoModel medicamento);
+
+        //Eliminar medicamento
+        int eliminarMedicamento(int idMedicamento);
 
         // TODO: agregue aquí sus operaciones de servicio
     }
 
 
     // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
-
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
-    }
 }
