@@ -24,7 +24,7 @@ namespace ServicioMedicamento
         MedicamentoModel recuperarMedicamento(int idMedicamento);
 
         //Agregar y editar medicamentto
-        int recuperarMedicamento(MedicamentoModel medicamento);
+        int registrarYActualizarMedicamento(MedicamentoModel medicamento);
 
         //Eliminar medicamento
         int eliminarMedicamento(int idMedicamento);
