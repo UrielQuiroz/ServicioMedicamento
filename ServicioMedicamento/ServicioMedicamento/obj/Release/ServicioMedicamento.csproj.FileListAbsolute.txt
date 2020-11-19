@@ -1,0 +1,12 @@
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\bin\ServicioMedicamento.dll.config
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\bin\ServicioMedicamento.dll
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\bin\ServicioMedicamento.pdb
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\bin\EntityFramework.dll
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\bin\EntityFramework.SqlServer.dll
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\bin\EntityFramework.xml
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\bin\EntityFramework.SqlServer.xml
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\obj\Release\ServicioMedicamento.csprojAssemblyReference.cache
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\obj\Release\ServicioMedicamento.csproj.CoreCompileInputs.cache
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\obj\Release\ServicioMedicamento.csproj.CopyComplete
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\obj\Release\ServicioMedicamento.dll
+C:\Projects\ServicioMedicamento\ServicioMedicamento\ServicioMedicamento\obj\Release\ServicioMedicamento.pdb

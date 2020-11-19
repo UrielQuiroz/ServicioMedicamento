@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MedicoModelStoreContainer" CdmEntityContainer="MedicoEntities">
+    <EntitySetMapping Name="Clinica">
+      <EntityTypeMapping TypeName="MedicoModel.Clinica">
+        <MappingFragment StoreEntitySet="Clinica">
+          <ScalarProperty Name="IIDCLINICA" ColumnName="IIDCLINICA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="BHABILITADO" ColumnName="BHABILITADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consulta">
+      <EntityTypeMapping TypeName="MedicoModel.Consulta">
+        <MappingFragment StoreEntitySet="Consulta">
+          <ScalarProperty Name="IIDCONSULTA" ColumnName="IIDCONSULTA" />
+          <ScalarProperty Name="IIDPACIENTE" ColumnName="IIDPACIENTE" />
+          <ScalarProperty Name="PESO" ColumnName="PESO" />
+          <ScalarProperty Name="ESTATURA" ColumnName="ESTATURA" />
+          <ScalarProperty Name="EXAMENFISICO" ColumnName="EXAMENFISICO" />
+          <ScalarProperty Name="EXAMENLABORATORIO" ColumnName="EXAMENLABORATORIO" />
+          <ScalarProperty Name="DIAGNOSTICO" ColumnName="DIAGNOSTICO" />
+          <ScalarProperty Name="FECHACITA" ColumnName="FECHACITA" />
+          <ScalarProperty Name="BHABILITADO" ColumnName="BHABILITADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsultaMedicamento">
+      <EntityTypeMapping TypeName="MedicoModel.ConsultaMedicamento">
+        <MappingFragment StoreEntitySet="ConsultaMedicamento">
+          <ScalarProperty Name="IIDCONSULTA" ColumnName="IIDCONSULTA" />
+          <ScalarProperty Name="IIDMEDICAMENTO" ColumnName="IIDMEDICAMENTO" />
+          <ScalarProperty Name="CANTIDAD" ColumnName="CANTIDAD" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctor">
+      <EntityTypeMapping TypeName="MedicoModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctor">
+          <ScalarProperty Name="IIDDOCTOR" ColumnName="IIDDOCTOR" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APPATERNO" ColumnName="APPATERNO" />
+          <ScalarProperty Name="APMATERNO" ColumnName="APMATERNO" />
+          <ScalarProperty Name="IIDCLINICA" ColumnName="IIDCLINICA" />
+          <ScalarProperty Name="IIDESPECIALIDAD" ColumnName="IIDESPECIALIDAD" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="TELEFONOCELULAR" ColumnName="TELEFONOCELULAR" />
+          <ScalarProperty Name="IIDSEXO" ColumnName="IIDSEXO" />
+          <ScalarProperty Name="SUELDO" ColumnName="SUELDO" />
+          <ScalarProperty Name="FECHACONTRATO" ColumnName="FECHACONTRATO" />
+          <ScalarProperty Name="BHABILITADO" ColumnName="BHABILITADO" />
+          <ScalarProperty Name="NOMBREARCHIVO" ColumnName="NOMBREARCHIVO" />
+          <ScalarProperty Name="ARCHIVO" ColumnName="ARCHIVO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Especialidad">
+      <EntityTypeMapping TypeName="MedicoModel.Especialidad">
+        <MappingFragment StoreEntitySet="Especialidad">
+          <ScalarProperty Name="IIDESPECIALIDAD" ColumnName="IIDESPECIALIDAD" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="BHABILITADO" ColumnName="BHABILITADO" />
+          <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FormaFarmaceutica">
+      <EntityTypeMapping TypeName="MedicoModel.FormaFarmaceutica">
+        <MappingFragment StoreEntitySet="FormaFarmaceutica">
+          <ScalarProperty Name="IIDFORMAFARMACEUTICA" ColumnName="IIDFORMAFARMACEUTICA" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="BHABILITADO" ColumnName="BHABILITADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Medicamento">
+      <EntityTypeMapping TypeName="MedicoModel.Medicamento">
+        <MappingFragment StoreEntitySet="Medicamento">
+          <ScalarProperty Name="IIDMEDICAMENTO" ColumnName="IIDMEDICAMENTO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="CONCENTRACION" ColumnName="CONCENTRACION" />
+          <ScalarProperty Name="IIDFORMAFARMACEUTICA" ColumnName="IIDFORMAFARMACEUTICA" />
+          <ScalarProperty Name="PRECIO" ColumnName="PRECIO" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="PRESENTACION" ColumnName="PRESENTACION" />
+          <ScalarProperty Name="BHABILITADO" ColumnName="BHABILITADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paciente">
+      <EntityTypeMapping TypeName="MedicoModel.Paciente">
+        <MappingFragment StoreEntitySet="Paciente">
+          <ScalarProperty Name="IIDPACIENTE" ColumnName="IIDPACIENTE" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="APPATERNO" ColumnName="APPATERNO" />
+          <ScalarProperty Name="APMATERNO" ColumnName="APMATERNO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+          <ScalarProperty Name="TELEFONOFIJO" ColumnName="TELEFONOFIJO" />
+          <ScalarProperty Name="TELEFONOCELULAR" ColumnName="TELEFONOCELULAR" />
+          <ScalarProperty Name="FECHANACIMIENTO" ColumnName="FECHANACIMIENTO" />
+          <ScalarProperty Name="IIDSEXO" ColumnName="IIDSEXO" />
+          <ScalarProperty Name="IIDTIPOSANGRE" ColumnName="IIDTIPOSANGRE" />
+          <ScalarProperty Name="ALERGIAS" ColumnName="ALERGIAS" />
+          <ScalarProperty Name="ENFERMEDADESCRONICAS" ColumnName="ENFERMEDADESCRONICAS" />
+          <ScalarProperty Name="CUADRADOVACUNAS" ColumnName="CUADRADOVACUNAS" />
+          <ScalarProperty Name="ANTECEDENTESQUIRURGICOS" ColumnName="ANTECEDENTESQUIRURGICOS" />
+          <ScalarProperty Name="BHABILITADO" ColumnName="BHABILITADO" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sexo">
+      <EntityTypeMapping TypeName="MedicoModel.Sexo">
+        <MappingFragment StoreEntitySet="Sexo">
+          <ScalarProperty Name="IIDSEXO" ColumnName="IIDSEXO" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="BHABILITADO" ColumnName="BHABILITADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoSangre">
+      <EntityTypeMapping TypeName="MedicoModel.TipoSangre">
+        <MappingFragment StoreEntitySet="TipoSangre">
+          <ScalarProperty Name="IIDTIPOSANGRE" ColumnName="IIDTIPOSANGRE" />
+          <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+          <ScalarProperty Name="BHABILITADO" ColumnName="BHABILITADO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

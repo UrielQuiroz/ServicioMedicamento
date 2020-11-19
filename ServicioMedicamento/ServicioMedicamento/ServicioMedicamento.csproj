@@ -79,8 +79,10 @@
       <DependentUpon>DBMedico.edmx</DependentUpon>
       <LastGenOutput>DBMedico.cs</LastGenOutput>
     </Content>
-    <Content Include="Service1.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Medicamentos.svc" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\FormaFarmaceuticaModel.cs" />
@@ -130,10 +132,10 @@
     <Compile Include="Model\TipoSangre.cs">
       <DependentUpon>DBMedico.tt</DependentUpon>
     </Compile>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
+    <Compile Include="Medicamentos.svc.cs">
+      <DependentUpon>Medicamentos.svc</DependentUpon>
     </Compile>
-    <Compile Include="IService1.cs" />
+    <Compile Include="IMedicamentos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +150,8 @@
       <DependentUpon>DBMedico.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

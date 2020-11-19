@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedicoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Clinica">
+    <Key>
+      <PropertyRef Name="IIDCLINICA" />
+    </Key>
+    <Property Name="IIDCLINICA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="150" />
+    <Property Name="BHABILITADO" Type="int" />
+  </EntityType>
+  <EntityType Name="Consulta">
+    <Key>
+      <PropertyRef Name="IIDCONSULTA" />
+    </Key>
+    <Property Name="IIDCONSULTA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IIDPACIENTE" Type="int" />
+    <Property Name="PESO" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ESTATURA" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="EXAMENFISICO" Type="varchar" MaxLength="200" />
+    <Property Name="EXAMENLABORATORIO" Type="varchar" MaxLength="200" />
+    <Property Name="DIAGNOSTICO" Type="varchar" MaxLength="200" />
+    <Property Name="FECHACITA" Type="datetime" />
+    <Property Name="BHABILITADO" Type="int" />
+  </EntityType>
+  <EntityType Name="ConsultaMedicamento">
+    <Key>
+      <PropertyRef Name="IIDCONSULTA" />
+      <PropertyRef Name="IIDMEDICAMENTO" />
+    </Key>
+    <Property Name="IIDCONSULTA" Type="int" Nullable="false" />
+    <Property Name="IIDMEDICAMENTO" Type="int" Nullable="false" />
+    <Property Name="CANTIDAD" Type="int" />
+    <Property Name="PRECIO" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TOTAL" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="IIDDOCTOR" />
+    </Key>
+    <Property Name="IIDDOCTOR" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="APPATERNO" Type="varchar" MaxLength="150" />
+    <Property Name="APMATERNO" Type="varchar" MaxLength="150" />
+    <Property Name="IIDCLINICA" Type="int" />
+    <Property Name="IIDESPECIALIDAD" Type="int" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="150" />
+    <Property Name="TELEFONOCELULAR" Type="varchar" MaxLength="10" />
+    <Property Name="IIDSEXO" Type="int" />
+    <Property Name="SUELDO" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="FECHACONTRATO" Type="datetime" />
+    <Property Name="BHABILITADO" Type="int" />
+    <Property Name="NOMBREARCHIVO" Type="varchar" MaxLength="100" />
+    <Property Name="ARCHIVO" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Especialidad">
+    <Key>
+      <PropertyRef Name="IIDESPECIALIDAD" />
+    </Key>
+    <Property Name="IIDESPECIALIDAD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="BHABILITADO" Type="int" />
+    <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="FormaFarmaceutica">
+    <Key>
+      <PropertyRef Name="IIDFORMAFARMACEUTICA" />
+    </Key>
+    <Property Name="IIDFORMAFARMACEUTICA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="BHABILITADO" Type="int" />
+  </EntityType>
+  <EntityType Name="Medicamento">
+    <Key>
+      <PropertyRef Name="IIDMEDICAMENTO" />
+    </Key>
+    <Property Name="IIDMEDICAMENTO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="CONCENTRACION" Type="varchar" MaxLength="100" />
+    <Property Name="IIDFORMAFARMACEUTICA" Type="int" />
+    <Property Name="PRECIO" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="STOCK" Type="int" />
+    <Property Name="PRESENTACION" Type="varchar" MaxLength="100" />
+    <Property Name="BHABILITADO" Type="int" />
+  </EntityType>
+  <EntityType Name="Paciente">
+    <Key>
+      <PropertyRef Name="IIDPACIENTE" />
+    </Key>
+    <Property Name="IIDPACIENTE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="APPATERNO" Type="varchar" MaxLength="150" />
+    <Property Name="APMATERNO" Type="varchar" MaxLength="150" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="100" />
+    <Property Name="DIRECCION" Type="varchar" MaxLength="200" />
+    <Property Name="TELEFONOFIJO" Type="varchar" MaxLength="10" />
+    <Property Name="TELEFONOCELULAR" Type="varchar" MaxLength="10" />
+    <Property Name="FECHANACIMIENTO" Type="datetime" />
+    <Property Name="IIDSEXO" Type="int" />
+    <Property Name="IIDTIPOSANGRE" Type="int" />
+    <Property Name="ALERGIAS" Type="varchar" MaxLength="200" />
+    <Property Name="ENFERMEDADESCRONICAS" Type="varchar" MaxLength="200" />
+    <Property Name="CUADRADOVACUNAS" Type="varchar" MaxLength="200" />
+    <Property Name="ANTECEDENTESQUIRURGICOS" Type="varchar" MaxLength="200" />
+    <Property Name="BHABILITADO" Type="int" />
+    <Property Name="foto" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Sexo">
+    <Key>
+      <PropertyRef Name="IIDSEXO" />
+    </Key>
+    <Property Name="IIDSEXO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="50" />
+    <Property Name="BHABILITADO" Type="int" />
+  </EntityType>
+  <EntityType Name="TipoSangre">
+    <Key>
+      <PropertyRef Name="IIDTIPOSANGRE" />
+    </Key>
+    <Property Name="IIDTIPOSANGRE" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NOMBRE" Type="varchar" MaxLength="100" />
+    <Property Name="BHABILITADO" Type="int" />
+  </EntityType>
+  <Association Name="FK__Consulta__IIDPAC__0EA330E9">
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="0..1" />
+    <End Role="Consulta" Type="Self.Consulta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="IIDPACIENTE" />
+      </Principal>
+      <Dependent Role="Consulta">
+        <PropertyRef Name="IIDPACIENTE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ConsultaM__IIDCO__0F975522">
+    <End Role="Consulta" Type="Self.Consulta" Multiplicity="1" />
+    <End Role="ConsultaMedicamento" Type="Self.ConsultaMedicamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consulta">
+        <PropertyRef Name="IIDCONSULTA" />
+      </Principal>
+      <Dependent Role="ConsultaMedicamento">
+        <PropertyRef Name="IIDCONSULTA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ConsultaM__IIDME__108B795B">
+    <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="1" />
+    <End Role="ConsultaMedicamento" Type="Self.ConsultaMedicamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medicamento">
+        <PropertyRef Name="IIDMEDICAMENTO" />
+      </Principal>
+      <Dependent Role="ConsultaMedicamento">
+        <PropertyRef Name="IIDMEDICAMENTO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Doctor__IIDSEXO__117F9D94">
+    <End Role="Sexo" Type="Self.Sexo" Multiplicity="0..1" />
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sexo">
+        <PropertyRef Name="IIDSEXO" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="IIDSEXO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Medicamen__IIDFO__145C0A3F">
+    <End Role="FormaFarmaceutica" Type="Self.FormaFarmaceutica" Multiplicity="0..1" />
+    <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FormaFarmaceutica">
+        <PropertyRef Name="IIDFORMAFARMACEUTICA" />
+      </Principal>
+      <Dependent Role="Medicamento">
+        <PropertyRef Name="IIDFORMAFARMACEUTICA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctor_Clinica">
+    <End Role="Clinica" Type="Self.Clinica" Multiplicity="0..1" />
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clinica">
+        <PropertyRef Name="IIDCLINICA" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="IIDCLINICA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctor_Especialidad">
+    <End Role="Especialidad" Type="Self.Especialidad" Multiplicity="0..1" />
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Especialidad">
+        <PropertyRef Name="IIDESPECIALIDAD" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="IIDESPECIALIDAD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paciente_Sexo">
+    <End Role="Sexo" Type="Self.Sexo" Multiplicity="0..1" />
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sexo">
+        <PropertyRef Name="IIDSEXO" />
+      </Principal>
+      <Dependent Role="Paciente">
+        <PropertyRef Name="IIDSEXO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Paciente_TipoSangre">
+    <End Role="TipoSangre" Type="Self.TipoSangre" Multiplicity="0..1" />
+    <End Role="Paciente" Type="Self.Paciente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoSangre">
+        <PropertyRef Name="IIDTIPOSANGRE" />
+      </Principal>
+      <Dependent Role="Paciente">
+        <PropertyRef Name="IIDTIPOSANGRE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedicoModelStoreContainer">
+    <EntitySet Name="Clinica" EntityType="Self.Clinica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consulta" EntityType="Self.Consulta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConsultaMedicamento" EntityType="Self.ConsultaMedicamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Especialidad" EntityType="Self.Especialidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FormaFarmaceutica" EntityType="Self.FormaFarmaceutica" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Medicamento" EntityType="Self.Medicamento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Paciente" EntityType="Self.Paciente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sexo" EntityType="Self.Sexo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoSangre" EntityType="Self.TipoSangre" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Consulta__IIDPAC__0EA330E9" Association="Self.FK__Consulta__IIDPAC__0EA330E9">
+      <End Role="Paciente" EntitySet="Paciente" />
+      <End Role="Consulta" EntitySet="Consulta" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ConsultaM__IIDCO__0F975522" Association="Self.FK__ConsultaM__IIDCO__0F975522">
+      <End Role="Consulta" EntitySet="Consulta" />
+      <End Role="ConsultaMedicamento" EntitySet="ConsultaMedicamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ConsultaM__IIDME__108B795B" Association="Self.FK__ConsultaM__IIDME__108B795B">
+      <End Role="Medicamento" EntitySet="Medicamento" />
+      <End Role="ConsultaMedicamento" EntitySet="ConsultaMedicamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Doctor__IIDSEXO__117F9D94" Association="Self.FK__Doctor__IIDSEXO__117F9D94">
+      <End Role="Sexo" EntitySet="Sexo" />
+      <End Role="Doctor" EntitySet="Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Medicamen__IIDFO__145C0A3F" Association="Self.FK__Medicamen__IIDFO__145C0A3F">
+      <End Role="FormaFarmaceutica" EntitySet="FormaFarmaceutica" />
+      <End Role="Medicamento" EntitySet="Medicamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctor_Clinica" Association="Self.FK_Doctor_Clinica">
+      <End Role="Clinica" EntitySet="Clinica" />
+      <End Role="Doctor" EntitySet="Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctor_Especialidad" Association="Self.FK_Doctor_Especialidad">
+      <End Role="Especialidad" EntitySet="Especialidad" />
+      <End Role="Doctor" EntitySet="Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paciente_Sexo" Association="Self.FK_Paciente_Sexo">
+      <End Role="Sexo" EntitySet="Sexo" />
+      <End Role="Paciente" EntitySet="Paciente" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Paciente_TipoSangre" Association="Self.FK_Paciente_TipoSangre">
+      <End Role="TipoSangre" EntitySet="TipoSangre" />
+      <End Role="Paciente" EntitySet="Paciente" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
